@@ -5,3 +5,6 @@ We have all experienced this problem: we go on a fun trip and are having the tim
 Luckily, with the revolutionary power of artificial intelligence, and thanks to this repository, we will not have to waste our time like this ever again. 
 
 This repository implements a command line script which takes in the dates of a wilderness trip and then uses OpenAI's GPT-3 and Twilio's texting service to message your mom messages about your trip into the wilderness. 
+
+
+![image](https://github.com/hockeyiscool19/wilderness-mom-texter/assets/65208198/ac0e2c93-7ae2-45a3-a1c7-7ec6a67a8a82)
