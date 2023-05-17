@@ -28,16 +28,10 @@ async function generateText() {
         stop: [' Human:', ' AI:'],
       });
       text = generatedText.data.choices[0].text
-    //   console.log(text);
       return text;
     } catch (error) {
       console.error('Error:', error);
     }
   }
-
-//   const generatedText =  generateText();
-//   console.log(generatedText);
-  
-// console.log(r);
 
 module.exports = generateText;
