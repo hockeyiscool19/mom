@@ -1,6 +1,6 @@
 
-const prompt = require('./services/prompt');
-const generateText = require('./services/gpt3');
+const prompt = require('./src/services/prompt');
+const generateText = require('./src/services/gpt3');
 
 async function main() {
     const { name, tripDates } = await prompt();

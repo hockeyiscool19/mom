@@ -1,6 +1,5 @@
-# 
-
-docker build -t image-name .
 
 
-docker run -d image-name
+docker build -t lambda .
+
+docker run -d lambda 
