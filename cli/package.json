@@ -1,0 +1,27 @@
+{
+  "name": "wildernessmomtexter",
+  "version": "1.0.0",
+  "description": "We have all experienced this problem: we go on a fun trip and are having the time of our lives, but we leave our mom's to worry about our whereabouts. Then, we have to PAINSTAKINGLY take time out of our day, only to tell our mom that we are indeed alright. This problem is especially pressing when you are in the wilderness without service or wifi, having no way to contact your mom. How is she going to know that you have both limbs and have not been attacked by a bear? Impossible!!!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1379.0",
+    "express": "^4.18.2",
+    "inquirer": "^9.2.3",
+    "nodemailer": "^6.9.2",
+    "openai": "^3.2.1",
+    "twilio": "^4.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hockeyiscool19/wilderness-mom-texter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hockeyiscool19/wilderness-mom-texter/issues"
+  },
+  "homepage": "https://github.com/hockeyiscool19/wilderness-mom-texter#readme"
+}
