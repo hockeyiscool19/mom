@@ -13,3 +13,8 @@ This repository implements a command line script which takes in the dates of a w
 ![image](https://github.com/hockeyiscool19/wilderness-mom-texter/assets/65208198/ac0e2c93-7ae2-45a3-a1c7-7ec6a67a8a82)
 
 The Process: This project includes a variety of different technologies, all of which help get that lovely message across. First, I built a JavaScript project utilizing node and express. The Javascript program simply runs on a CLI, prompting the user for the dates of your trip. Using cloudwatch, Node connects with CloudWatch to schedule an event, including all the different days of your trip.
+
+
+Wilderness calling out,
+Mom, come explore with me.
+Peaceful, quiet beauty.
