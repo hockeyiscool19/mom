@@ -1,4 +1,0 @@
-
-aws --version
-aws configure
-aws sts get-caller-identity
