@@ -1,5 +1,5 @@
 # Define the base image
-FROM node:14
+FROM node:18
 
 # Set the working directory in the Docker image
 WORKDIR /usr/src/app
@@ -10,8 +10,8 @@ COPY . .
 RUN npm install openai 
 
 # Install dependencies
-RUN npm install openai 
 RUN npm install readline
+RUN npm install aws-sdk
 
 # Command to run the application
 CMD [ "node", "index.js" ]

@@ -1,5 +1,5 @@
 
 
-docker build -t lambda .
+docker build -t my-lambda .
 
-docker run -d lambda 
+docker run -d my-lambda 
