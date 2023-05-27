@@ -11,6 +11,7 @@ This repository implements a command line script which takes in the dates of a w
 
 ![image](https://github.com/hockeyiscool19/mom-texter/assets/65208198/65318104-6d91-4cb0-af24-1e1f7f0149f0)
 
+
 Project Goal And Requirements: The goal of this project was to make a CLI script that allows you to schedule auto-generated texts to your mom. Thus, this project required completing a variety of tasks. One has to be able to:
 
 1) Implement a CLI script inquiring about the dates of a trip
