@@ -5,7 +5,8 @@ FROM node:18
 WORKDIR /usr/src/app
 
 # Copy the rest of the application to Docker image
-COPY . .
+COPY index.js ./
+COPY src/services/fargate.js src/services/prompt.js ./src/services/
 
 RUN npm install openai 
 

@@ -1,7 +1,8 @@
 
-const accountSid = 'AC7c41214118c2964215d236e1a1dcda47';
-const authToken = '230a61510cd7217037768d39e75c5feb';
+require('dotenv').config({ path: './dev.env.gitignore' });
 
+const accountSid = process.env.ACCOUNT_SID;
+const authToken = process.env.AUTH_TOKEN;
 
 const twilio = require('twilio');
 const client = twilio(accountSid, authToken);
