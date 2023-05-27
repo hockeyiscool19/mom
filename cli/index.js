@@ -16,6 +16,8 @@ async function main() {
     // for date in tripDates, create event for that date 
     for (const date of tripDates) {
         const scheduledDate = new Date(date);
+        // Make the date be at 8:00PM
+        scheduledDate.setHours(20);
         scheduledDate.setMinutes(scheduledDate.getMinutes()); // Set the scheduled time to two minutes from the current date
         console.log('Scheduled date:', scheduledDate);
         createEvent(scheduledDate);

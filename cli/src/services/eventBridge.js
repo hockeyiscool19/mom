@@ -24,10 +24,5 @@ async function createEvent(date) {
   }
 }
 
-// Created test event
-// const scheduledDate = new Date();
-// scheduledDate.setMinutes(scheduledDate.getMinutes() + 2); // Set the scheduled time to two minutes from now
-// console.log('Scheduled date:', scheduledDate);
-// createEvent(scheduledDate);
 
 module.exports = createEvent;

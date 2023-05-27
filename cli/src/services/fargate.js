@@ -11,9 +11,6 @@ async function createFargateTask() {
     const cluster = 'mom-texter';
     const taskDefinition = 'mom-texter:5';
     const subnetIds = [subnet]; 
-
-    // const subnetIds = ['subnet-0ea6d9c310b5d3211']; 
-
     const response = await ecs.runTask({
       cluster: cluster,
       taskDefinition: taskDefinition,

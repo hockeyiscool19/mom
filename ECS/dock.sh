@@ -1,3 +1,35 @@
 #!/bin/bash
 
-echo "Hello, World"
+source dev.env.gitignore
+
+
+case "$1" in
+  -b) docker build -t my-ecs . ;;
+  -r) docker run -it my-ecs ;;
+  -l) aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $AWS_ACCOUNT_NUM.dkr.ecr.us-east-1.amazonaws.com ;;
+  -p) docker push 363194772334.dkr.ecr.us-east-1.amazonaws.com/mom-texter:tag && docker tag my-ecs:latest $AWS_ACCOUNT_NUM.dkr.ecr.us-east-1.amazonaws.com/mom-texter:tag ;;
+  -m) docker tag my-ecs:latest $AWS_ACCOUNT_NUM.dkr.ecr.us-east-1.amazonaws.com/mom-texter:tag ;;
+  -r) docker stop temp && docker rm temp ;;
+  -a) docker build --no-cache -t my-ecs . && 
+        aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $AWS_ACCOUNT_NUM.dkr.ecr.us-east-1.amazonaws.com &&
+        docker push $AWS_ACCOUNT_NUM.dkr.ecr.us-east-1.amazonaws.com/mom-texter:tag && docker tag my-ecs:latest $AWS_ACCOUNT_NUM.dkr.ecr.us-east-1.amazonaws.com/mom-texter:tag &&
+        docker tag my-ecs:latest $AWS_ACCOUNT_NUM.dkr.ecr.us-east-1.amazonaws.com/mom-texter:tag &&
+        docker stop temp && 
+        docker rm temp &&
+        docker run -it --name temp $AWS_ACCOUNT_NUM.dkr.ecr.us-east-1.amazonaws.com/mom-texter:tag ;;
+
+  *) echo "Invalid option";;
+esac
+
+
+
+
+# docker build --no-cache -t my-ecs .
+# docker run -it my-ecs
+
+# aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 363194772334.dkr.ecr.us-east-1.amazonaws.com
+# docker push 363194772334.dkr.ecr.us-east-1.amazonaws.com/mom-texter:tag
+# docker tag my-ecs:latest 363194772334.dkr.ecr.us-east-1.amazonaws.com/mom-texter:tag
+# docker pull 363194772334.dkr.ecr.us-east-1.amazonaws.com/mom-texter:tag
+# docker run -it --name temp7 363194772334.dkr.ecr.us-east-1.amazonaws.com/mom-texter:tag
+

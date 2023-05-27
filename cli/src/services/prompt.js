@@ -1,4 +1,3 @@
-// src/services/prompt.js
 const readline = require('readline');
 
 const prompt = () => {
