@@ -28,10 +28,23 @@ Implementing Step By Step:
 4) I used Twilio's cloud to send texts, once again implemented by node.js code.
 5) The services I used costed under 20$ for the development stage, as I needed to test code at each step. 
 
-Design Decisions: 
-The Process: This project includes a variety of different technologies, all of which help get that lovely message across. First, I built a JavaScript project utilizing node and express. The Javascript program simply runs on a CLI, prompting the user for the dates of your trip. Using cloudwatch, Node connects with CloudWatch to schedule an event, including all the different days of your trip.
+##Design Decisions: in this section, I will not cover every decision, but I would like to give a broad discussion on my thought process. This discussion will be guided by the questions I asked myself and by general questions. 
 
+###Why did this project necessitate using the cloud and microservices? 
+This project necessitated a microservice arquitechture, since there would have to a be a clear difference between the CLI script and running the ECS contianer at the alotted time. I could simply leave my computer running or have the time to spin up my own local server. Thus, I split this repository into two folders -- one for the CLI script, the other for the ECS infrastructure. 
+![image](https://github.com/hockeyiscool19/mom-texter/assets/65208198/3ba07916-9d13-46ed-8ce4-7f032e73eed6)
+As you can see in this picture, both of the code to instantiate these microservices are containerized and thus separated. 
 
+###Why use Docker and ECS?
+I used Docker since it helped manage dependencies and provide a consistent run time environment locally and within the cloud. 
+
+###Why use Fargate instead of EC2 or Lambda?
+I chose Fargate as opposed to EC2 since I only needed this message to send out at most once a day. Running an EC2 server would have costed a lot more than Fargate. Also, I chose Faraget over Lambda since I did not need to trigger it based on an event and payload, since my script did not take in any arguments.
+
+###Why use Twilio over Amazon SNS?
+Getting a number allotted from Amazon would take up to two weeks, whereas Twilio provisioned the number immidietly. 
+
+I would like to conclude this read me with the lessons I learned building this project.
 Wilderness calling out,
 Mom, come explore with me.
 Peaceful, quiet beauty.
