@@ -1,4 +1,4 @@
-﻿# wilderness-mom-texter
+﻿# mom-texter
 
 Notice: I would never use this program to fool people, but please see my ethics section at the bottom of this repository.
 
