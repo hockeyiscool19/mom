@@ -1,6 +1,6 @@
 # mom-texter
 
-## Notice: I would never use this program to fool people, and thus I will lead with an introduction, project description, and section on ethics. Then I will discuss the implementation of this project and design decisions, and key takeaways.
+### Notice: I would never use this program to fool people, and thus I will lead with an introduction, project description, and section on ethics. Then I will discuss the implementation of this project and design decisions, and key takeaways.
 
 We have all experienced this problem: we go on a fun trip and are having the time of our lives, but we leave our mom's to worry about our whereabouts. Then, we have to PAINSTAKINGLY take time out of our day, only to tell our mom that we are indeed alright. This problem is especially pressing when you are in the wilderness without service or wifi, having no way to contact your mom. How is she going to know that you have both limbs and have not been attacked by a bear? Impossible!!! I have even discussed this project with some of my friends, and they have the same complaint: their moms expect a dull text requiring a boring update. 
 (To be fair, your dad may worry about your whereabouts, but this is my project and my dad couldn't care less about where I hike and for how long.)
@@ -12,7 +12,7 @@ This repository implements a command line script which takes in the dates of a w
 ![image](https://github.com/hockeyiscool19/mom-texter/assets/65208198/65318104-6d91-4cb0-af24-1e1f7f0149f0)
 
 
-﻿## Project Goal And Requirements:
+### Project Goal And Requirements:
 The goal of this project was to make a CLI script that allows you to schedule auto-generated texts to your mom. Thus, this project required completing a variety of tasks. One has to be able to:
 
 1) Implement a CLI script inquiring about the dates of a trip
@@ -23,7 +23,7 @@ The goal of this project was to make a CLI script that allows you to schedule au
 
 Moreover, completing this process required use of cloud technologies, since I didn't have access to an at-home server. 
 
-﻿## Ethics: 
+### Ethics: 
 I must first note that I would never use this service to fool my mother, only to show affection. I feel releasing this service to others could cause harm, so that I would not do. 
 
 I view this project as a gag with a deeper twist. The gag is that I care enough about my mom to feel that I should give texts and spend enough effort to make this mom texter, yet I lament mundane, update texts. I know that in-person updates are far more interesting and valuable, yet feel social pressure to text boring how-do-you-do texts. But this gag has a dark side, admittedly. This project shows just how easily we can use and missuse services such as OpenAI to spread false information to love ones and, in other scenarios, to society as well. These automated texts are a form of missinformation, as the bot speaks on my behalf. If I can make this project as an individual, so too can bad actors in group. Thus, as much this mom-texter is a portfolio project, so too is a comment on our political culture.
