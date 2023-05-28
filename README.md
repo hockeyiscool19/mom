@@ -1,13 +1,15 @@
 # mom-texter
 
-### Notice: I would never use this program to fool people, and thus I will lead with an introduction, project description, and section on ethics. Then I will discuss the implementation of this project and design decisions, and key takeaways.
+### Notice: I would never use this program to fool people, and thus I will lead with an introduction, project description, and a section on ethics. Then I will discuss the implementation of this project, design decisions, and key takeaways.
 
 ### Introduction
-We have all experienced this problem: we go on a fun trip and are having the time of our lives, but we leave our mom's to worry about our whereabouts. Then, we have to **painstakingly** take time out of our day, only to tell our mom that we are indeed alright. This problem is especially pressing when you are in the wilderness without service or wifi, having no way to contact your mom. How is she going to know that you have both limbs and have not been attacked by a bear? Impossible!!! I have even discussed this project with some of my friends, and they have the same complaint: their moms expect a dull text requiring a boring update. (To be fair, your dad may worry about your whereabouts, but this is my project and my dad couldn't care less about where I hike and for how long.)
+We have all experienced this problem: we go on a fun trip and are having the time of our lives, but we leave our mom's to worry about our whereabouts. Then, we have to **painstakingly** take time out of our day, only to tell our mom that we are indeed alright. This problem is especially pressing when you are in the wilderness without service or wifi, having no way to contact your mom. How is she going to know that you have all of your limbs and have not been attacked by a bear? Impossible!!! 
+
+I have discussed this project with some of my friends, and they have the same complaint: their moms expect a dull text requiring a boring update. (To be fair, your dad may worry about your whereabouts, but this is my project, and my dad couldn't care less about where I go and for how long.)
 
 Luckily, with the revolutionary power of artificial intelligence, and thanks to this repository, we will not have to waste our time like this ever again. 
 
-This repository implements a command line script which takes in the dates of a wilderness trip and then uses OpenAI's GPT-3 and Twilio's texting service to message your mom messages about your trip into the wilderness. 
+This repository implements a command line interface which takes in the dates of a trip and then uses OpenAI's GPT-3 and Twilio's texting service to message your mom about your trip. 
 
 ### Project Goal And Requirements:
 The goal of this project was to make a CLI script that allows you to schedule auto-generated texts to your mom. Thus, this project required completing a variety of tasks. One has to be able to:
@@ -23,10 +25,10 @@ Moreover, completing this process required use of cloud technologies, since I di
 ### Ethics: 
 I must first note that I would never use this service to fool my mother, only to show affection. I feel releasing this service to others could cause harm, so that I would not do. 
 
-I view this project as a gag with a deeper twist. The gag is that I care enough about my mom to feel that I should give texts and spend enough effort to make this mom texter, yet I lament mundane, update texts. I know that in-person updates are far more interesting and valuable, yet feel social pressure to text boring how-do-you-do texts. But this gag has a dark side, admittedly. This project shows just how easily we can use and missuse services such as OpenAI to spread false information to love ones and, in other scenarios, to society as well. These automated texts are a form of missinformation, as the bot speaks on my behalf. If I can make this project as an individual, so too can bad actors in group. Thus, as much this mom-texter is a portfolio project, so too is a comment on our political culture.
+I view this project as a gag with a deeper twist. The gag is that I care enough about my mom to feel that I should give texts and spend enough effort to make this mom texter, yet I lament mundane, update texts. I know that in-person updates are far more interesting and valuable, yet feel social pressure to text boring how-do-you-do messages. But this gag has a dark side, admittedly. This project shows just how easily we can use and missuse services such as OpenAI to spread false information to love ones and, in other scenarios, to society as well. These automated texts are a form of missinformation, as the bot speaks on my behalf. If I can make this project as an individual, so too can bad actors in group and with far more impact. Thus, as much this mom-texter is a portfolio project, so too is a comment on our political culture.
 
 ### Implementing Step By Step:
-1) To implement my CLI script, I used node.js along with the readline package to ask questions and store dates. On the backend, the prompt function inside of cli/src/services/prompt.js would take in dates and format them to be used by the scheduler. Additionally, I also containerized this script with Docker to allow me to more easily push code changes from my local machine onto the cloud. This Docker container would be pushed to AWS ECS. 
+1) To implement my CLI script, I used node.js along with the readline package to ask questions and store dates. On the backend, the prompt function inside of cli/prompt.js would take in dates and format them to be used by the scheduler. Additionally, I also containerized this script with Docker to allow me to more easily push code changes from my local machine onto the cloud. This Docker container would be pushed to AWS ECS. 
 2) Being that I chose AWS, I used Amazon Eventbridge's Fargate to schedule running AWS ECS. Fargate allows you to schedule running containers. (I could have used Kubernetes to run containers but that would be serious overkill for my purposes.) 
 3) Autogenerating texts, I used OpenAI's GPT-3 model, and I called this API using node.js with randomized prompts.
 4) I used Twilio's cloud to send texts, once again implemented by node.js code.
