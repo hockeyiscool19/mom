@@ -9,9 +9,6 @@ Luckily, with the revolutionary power of artificial intelligence, and thanks to 
 
 This repository implements a command line script which takes in the dates of a wilderness trip and then uses OpenAI's GPT-3 and Twilio's texting service to message your mom messages about your trip into the wilderness. 
 
-![image](https://github.com/hockeyiscool19/mom-texter/assets/65208198/65318104-6d91-4cb0-af24-1e1f7f0149f0)
-
-
 ### Project Goal And Requirements:
 The goal of this project was to make a CLI script that allows you to schedule auto-generated texts to your mom. Thus, this project required completing a variety of tasks. One has to be able to:
 
@@ -34,6 +31,11 @@ I view this project as a gag with a deeper twist. The gag is that I care enough 
 3) Autogenerating texts, I used OpenAI's GPT-3 model, and I called this API using node.js with randomized prompts.
 4) I used Twilio's cloud to send texts, once again implemented by node.js code.
 5) The services I used costed under $20 for the development stage, as I needed to test code at each step. 
+
+In sum, each step ammalgomated to the following design:
+![image](https://github.com/hockeyiscool19/mom-texter/assets/65208198/65318104-6d91-4cb0-af24-1e1f7f0149f0)
+As this picture indicates, steps 1) and 2) are contained within the AWS cloud in separated docker images. Running the CLI, we connect to amazon EventBridge, scheduling events. In turn, EventBridge's Fargate runs a separate docker image with prompts GPT-3 to create a text to send to mom and uses Twilio's cloud to send the text. 
+step 1) is represented by the dockerized CLI script on the left. 
 
 ### Design Decisions:
 In this section, I will not cover every decision, but I would like to give a broad discussion on my thought process. This discussion will be guided by the questions I asked myself and by general questions. 
