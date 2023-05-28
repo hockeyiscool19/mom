@@ -34,6 +34,7 @@ I view this project as a gag with a deeper twist. The gag is that I care enough 
 
 In sum, each step ammalgomated to the following design:
 ![image](https://github.com/hockeyiscool19/mom-texter/assets/65208198/65318104-6d91-4cb0-af24-1e1f7f0149f0)
+
 As this picture indicates, steps 1) and 2) are contained within the AWS cloud in separated docker images. Running the CLI, we connect to amazon EventBridge, scheduling events. In turn, EventBridge's Fargate runs a separate docker image with prompts GPT-3 to create a text to send to mom and uses Twilio's cloud to send the text. 
 step 1) is represented by the dockerized CLI script on the left. 
 
